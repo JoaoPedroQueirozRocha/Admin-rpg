@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Nothing+You+Could+Do&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -41,23 +43,91 @@
 }
 
 .container{
+  position: absolute;
+  width: 50%;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.containerMissao{
   display: flex;
   flex-direction: column;
-
+  background-image: url(/src/assets/imagensNative/paperMission.jpg);
+  height: auto;
+  width: fit-content;
+  padding: 10px 40px 30px 40px;
+  margin: 0 auto;
 }
 
-p{
+/* body{
+  background-repeat: no-repeat;
+   background-size:cover; 
+  background-position: 100%;
+  background-image: url(/src/assets/imagensNative/table.jpg);
+  width: 100%;
+  height: 100vh;
+} */
 
-}
-
-#Alerta{
-  display: hidden;
-}
 
 #exibicao{
   display: none;
   border: 1px solid black;
   flex-direction: column;
-  text-align: left;
-  padding: 0px 0 10px 20px;
+  /* text-align: left; */
+  height: auto;
+  width: 70%;
+  padding: 10px 24px 30px 30px; 
+}
+
+#btnSubmit{
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 20px;
+  margin-top: 10px;
+  color: white;
+  width: 70%;
+  align-self: center;
+  background-image: url(/src/assets/imagensNative/redBackground.jpg);
+}
+
+input{
+  border: none;
+  border-bottom: 3px solid black;
+  background:none;
+  font-size: 25px;
+  font-family: 'Dancing Script', cursive;
+  color: black;
+  width: 400px;
+  font-weight: bold ;
+}
+
+label{
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: 400;
+  font-size: 30px;
+  color: black;
+  margin-top: 5vh;
+}
+
+select{
+  background: none;
+  color: black;
+  border: none;
+  font-size: 25px;  
+  border-bottom: 2px solid black;
+  font-family: 'Dancing Script', cursive;
+}
+
+
+textarea{
+  background: none;
+  border: 2px solid black;
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px; 
+  height: 20vh;
+  width: 400px;
 }
