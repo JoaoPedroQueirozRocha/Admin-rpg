@@ -47,6 +47,14 @@ class App extends Component{
   }
 
   submit(){
+    // var missaoExport = []
+    // missaoExport.push({
+    //   NomeMissa: this.state.nomeMissao,
+    //   NumeroDeJogadores: this.state.numeroJogadores,
+    //   Dificuldade: this.state.dificuldade,
+    //   Local: this.state.local,
+    //   Descricao: this.state.descricaoMissao      
+    // })
     let dificuldade = this.state.dificuldade
     let nome = document.getElementById("Nome")
     let numero = document.getElementById("Numero")
@@ -54,85 +62,56 @@ class App extends Component{
     let descricao = document.getElementById("Descricao")
     let local = document.getElementById("Local")
     let exibicao = document.getElementById("exibicao")
-    if(dificuldade === "Facil"){
+    if(dificuldade === "Fácil"){
       exibicao.style = "display:flex"
-      nome.innerHTML = `Nome da missão: ${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores}`;
+      nome.innerHTML = `${this.state.nomeMissao}`;
+      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
-      descricao.innerHTML = this.state.descricaoMissao
-      nome.style = "color:green";
-      numero.style = "color:green";
-      dificuldadeE.style = "color:green";
-      local.style = "color:green";
-      descricao.style = "color:green";
+      descricao.innerHTML = this.state.descricaoMissao;
 
       console.log("funciona")
     }
-    else if(dificuldade === "Medio"){
+    else if(dificuldade === "Média"){
       exibicao.style = "display:flex"
-      nome.innerHTML = `Nome da missão: ${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores}`;
+      nome.innerHTML = `${this.state.nomeMissao}`;
+      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
-      descricao.innerHTML = this.state.descricaoMissao
-      nome.style = "color:blue";
-      numero.style = "color:blue";
-      dificuldadeE.style = "color:blue";
-      local.style = "color:blue";
-      descricao.style = "color:blue";
+      descricao.innerHTML = this.state.descricaoMissao;
     }
-    else if(dificuldade === "Dificil"){
+    else if(dificuldade === "Difícil"){
       exibicao.style = "display:flex"
-      nome.innerHTML = `Nome da missão: ${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores}`;
+      nome.innerHTML = `${this.state.nomeMissao}`;
+      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao
-      nome.style = "color:red";
-      numero.style = "color:red";
-      dificuldadeE.style = "color:red";
-      local.style = "color:red";
-      descricao.style = "color:red";
+      ;
     }
-    if(dificuldade === "Dificil" && this.state.numeroJogadores < 3 || dificuldade === "Dificil" && this.state.numeroJogadores > 6){
-      alert("Número de jogadores menor do que o recomendado, indicado de 3 a 6 jogadores")
-      nome.innerHTML = `Nome da missão: ${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores}`;
+    if(dificuldade === "Difícil" && this.state.numeroJogadores < 3 || dificuldade === "Difícil" && this.state.numeroJogadores > 6){
+      alert("Número de jogadores diferente do que o recomendado, indicado de 3 a 6 jogadores")
+      nome.innerHTML = `${this.state.nomeMissao}`;
+      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
-      descricao.innerHTML = this.state.descricaoMissao
-      nome.style = "color:red";
-      numero.style = "color:red";
-      dificuldadeE.style = "color:red";
-      local.style = "color:red";
-      descricao.style = "color:red";
+      descricao.innerHTML = this.state.descricaoMissao;
     }
-    if(dificuldade === "Medio" && this.state.numeroJogadores > 4 || dificuldade === "Medio" && this.state.numeroJogadores < 2){
+    if(dificuldade === "Média" && this.state.numeroJogadores > 4 || dificuldade === "Média" && this.state.numeroJogadores < 2){
       alert("Número de jogadores maior do que o recomendado, indicado de 2 a 4 jogadores")
-      nome.innerHTML = `Nome da missão: ${this.state.nomeMissao}`;
+      nome.innerHTML = `${this.state.nomeMissao}`;
       numero.innerHTML = `Grupo: ${this.state.numeroJogadores}`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
-      descricao.innerHTML = this.state.descricaoMissao
-      nome.style = "color:blue";
-      numero.style = "color:blue";
-      dificuldadeE.style = "color:blue";
-      local.style = "color:blue";
-      descricao.style = "color:blue";
+      descricao.innerHTML = this.state.descricaoMissao;
     }
-    if(dificuldade === "Facil" && this.state.numeroJogadores < 2 || dificuldade === "Facil" && this.state.numeroJogadores > 4){
-      alert("Número de jogadores menor do que o recomendado, indicado de 2 a 4 jogadores")
-      nome.innerHTML = `Nome da missão: ${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores}`;
+    if(dificuldade === "Fácil" && this.state.numeroJogadores < 2 || dificuldade === "Fácil" && this.state.numeroJogadores > 4){
+      alert("Número de jogadores diferente do que o recomendado, indicado de 2 a 4 jogadores")
+      nome.innerHTML = `${this.state.nomeMissao}`;
+      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
-      descricao.innerHTML = this.state.descricaoMissao
-      nome.style = "color:green";
-      numero.style = "color:green";
-      dificuldadeE.style = "color:green";
-      local.style = "color:green";
-      descricao.style = "color:green";
+      descricao.innerHTML = this.state.descricaoMissao;
     }
   }
 
@@ -148,13 +127,13 @@ class App extends Component{
             <label htmlFor="">Local da missão</label>
             <input type="text" value={this.state.local} onChange={this.armazenarLocal} />
             <label htmlFor="Descrição da missão">Descrição da missão</label>
-            <textarea cols="5" rows="7" value={this.state.descricaoMissao} onChange={this.armazenarDescricao} ></textarea>
+            <textarea cols="30" rows="7" value={this.state.descricaoMissao} onChange={this.armazenarDescricao} ></textarea>
             <label htmlFor="">Dificuldade da missão</label>
             <select name="" id="" value={this.state.dificuldade} onChange={this.armazenarDificuldade} >
               <option></option>
-              <option value="Facil">Fácil</option>
-              <option value="Medio">Médio</option>
-              <option value="Dificil">Difícil</option>
+              <option value="Fácil">Fácil</option>
+              <option value="Média">Médio</option>
+              <option value="Difícil">Difícil</option>
             </select>
             <input type="submit" onClick={this.submit} id="btnSubmit"/>
           </div>
