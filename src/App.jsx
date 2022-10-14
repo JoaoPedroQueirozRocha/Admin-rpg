@@ -12,12 +12,14 @@ class App extends Component{
       descricaoMissao:'',
       dificuldade:'',
       local:'',
+      recompensa:'',
     }
     this.armazenarNome = this.armazenarNome.bind(this)
     this.armazenarNumeros = this.armazenarNumeros.bind(this)
     this.armazenarDescricao = this.armazenarDescricao.bind(this)
     this.armazenarDificuldade = this.armazenarDificuldade.bind(this)
     this.armazenarLocal = this.armazenarLocal.bind(this)
+    this.armazenasRecompensa = this.armazenasRecompensa.bind(this)
     this.submit = this.submit.bind(this)
   }
 
@@ -46,6 +48,11 @@ class App extends Component{
     this.setState({local: localInserido})
   }
 
+  armazenasRecompensa(f){
+    let recompensaInserida = f.target.value;
+    this.setState({recompensa: recompensaInserida})
+  }
+
   submit(){
     // var missaoExport = []
     // missaoExport.push({
@@ -62,6 +69,7 @@ class App extends Component{
     let descricao = document.getElementById("Descricao")
     let local = document.getElementById("Local")
     let exibicao = document.getElementById("exibicao")
+    let Recompensa = document.getElementById("Recompensa")
     if(dificuldade === "Fácil"){
       exibicao.style = "display:flex"
       nome.innerHTML = `${this.state.nomeMissao}`;
@@ -69,8 +77,7 @@ class App extends Component{
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
-
-      console.log("funciona")
+      Recompensa.innerHTML =`Recompensa: ${this.state.recompensa}`
     }
     else if(dificuldade === "Média"){
       exibicao.style = "display:flex"
@@ -79,6 +86,7 @@ class App extends Component{
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
+      Recompensa.innerHTML =`Recompensa: ${this.state.recompensa}`;
     }
     else if(dificuldade === "Difícil"){
       exibicao.style = "display:flex"
@@ -86,8 +94,8 @@ class App extends Component{
       numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
-      descricao.innerHTML = this.state.descricaoMissao
-      ;
+      descricao.innerHTML = this.state.descricaoMissao;
+      Recompensa.innerHTML =`Recompensa: ${this.state.recompensa}`
     }
     if(dificuldade === "Difícil" && this.state.numeroJogadores < 3 || dificuldade === "Difícil" && this.state.numeroJogadores > 6){
       alert("Número de jogadores diferente do que o recomendado, indicado de 3 a 6 jogadores")
@@ -113,12 +121,19 @@ class App extends Component{
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
     }
+    if(this.state.numeroJogadores === 1){
+      alert("Número de jogadores diferente do que o recomendado, indicado de 2 a 4 jogadores para missões faceis e médias e 3 a 6 para missões difíceis")
+      nome.innerHTML = `${this.state.nomeMissao}`;
+      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiro`;
+      dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
+      local.innerHTML = `Local: ${this.state.local}`
+      descricao.innerHTML = this.state.descricaoMissao;
+    }
   }
 
   render(){
     return(
-      <div className='container'>
-        
+      <div className='container'>      
           <div className='containerMissao'>
             <label htmlFor="">Nome da missão:</label>
             <input type="text" value={this.state.nomeMissao} onChange={this.armazenarNome} />
@@ -135,6 +150,8 @@ class App extends Component{
               <option value="Média">Médio</option>
               <option value="Difícil">Difícil</option>
             </select>
+            <label htmlFor="">Recompensa</label>
+            <input type="text" value={this.state.recompensa} onChange={this.armazenasRecompensa}/>
             <input type="submit" onClick={this.submit} id="btnSubmit"/>
           </div>
           <div id='exibicao'>
@@ -143,6 +160,7 @@ class App extends Component{
             <p id='Numero'></p>
             <p id='Local'></p>
             <p id='Descricao'></p>
+            <p id='Recompensa'></p>
           </div>
         </div>
 
