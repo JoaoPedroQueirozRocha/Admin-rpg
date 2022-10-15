@@ -73,29 +73,32 @@ class App extends Component{
     if(dificuldade === "Fácil"){
       exibicao.style = "display:flex"
       nome.innerHTML = `${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
+      numero.innerHTML = `Grupo: De 2 a ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
       Recompensa.innerHTML =`Recompensa: ${this.state.recompensa}`
+      nome.style = "color:#71e86f;"
     }
     else if(dificuldade === "Média"){
       exibicao.style = "display:flex"
       nome.innerHTML = `${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
+      numero.innerHTML = `Grupo: De 2 a ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
       Recompensa.innerHTML =`Recompensa: ${this.state.recompensa}`;
+      nome.style = "color:#5563a3;"
     }
     else if(dificuldade === "Difícil"){
       exibicao.style = "display:flex"
       nome.innerHTML = `${this.state.nomeMissao}`;
-      numero.innerHTML = `Grupo: ${this.state.numeroJogadores} aventureiros`;
+      numero.innerHTML = `Grupo: De 3 a ${this.state.numeroJogadores} aventureiros`;
       dificuldadeE.innerHTML = `Dificuldade: ${this.state.dificuldade}`;
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
       Recompensa.innerHTML =`Recompensa: ${this.state.recompensa}`
+      nome.style = "color:red;"
     }
     if(dificuldade === "Difícil" && this.state.numeroJogadores < 3 || dificuldade === "Difícil" && this.state.numeroJogadores > 6){
       alert("Número de jogadores diferente do que o recomendado, indicado de 3 a 6 jogadores")
@@ -129,6 +132,9 @@ class App extends Component{
       local.innerHTML = `Local: ${this.state.local}`
       descricao.innerHTML = this.state.descricaoMissao;
     }
+    // if(this.state.nomeMissao === undefined|| this.state.numeroJogadores === undefined || this.state.local === undefined || this.state.descricaoMissao === undefined || this.state.recompensa === undefined){
+    //   alert("Dados faltando, preencha todos os requisitos para postar a missão")
+    // }
   }
 
   render(){
